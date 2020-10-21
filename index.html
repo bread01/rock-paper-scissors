@@ -8,17 +8,70 @@
 
 <body>
   <script>
-        // variables - wasn't working correctly until I changed to brackets
-        let choicesRPS = ['Rock', 'Paper', 'Scissors'];
-        
-        // randomize the variables
-        function computerPlay(choicesRPS) {
-          return choicesRPS[Math.floor(Math.random() * choicesRPS.length)];
-        }
-        // output the random variable choice
-        console.log(computerPlay(choicesRPS));
-      
 
+        // computer randomize rock paper scissors
+        function computerPlay() {
+          let cChoice = ["Rock", "Paper", "Scissors"];
+          let mix = Math.floor(Math.random() * 3);
+          return cChoice[mix];
+        }
+        console.log(computerPlay())
+
+      
+        // all potential outcomes
+       /* function playRound(playerSelection, computerSelection) {
+            if ((playerSelection == 'rock') && (computerSelection == 'scissors')) {
+                  return "You win! Rock beats scissors!";
+            }   else if ((playerSelection == 'rock') && (computerSelection == 'paper')) {
+                  return "You lose! paper beats rock!";
+            }  else if ((playerSelection == 'paper') && (computerSelection == 'scissors')) {
+                  return "You lose! scissors beats paper!";
+            }   else if ((playerSelection == 'paper') && (computerSelection == 'rock')) {
+                  return "You win! paper beats rock!";
+            }  else if ((playerSelection == 'scissors') && (computerSelection == 'paper')) {
+                  return "You win! scissors beats paper";
+            }   else if ((playerSelection == 'scissors') && (computerSelection == 'rock')) {
+                  return "You lose! rock beats scissors";
+            }  else {
+                  return "You tie! initiate self-destruct...";
+            }
+            
+
+
+
+
+            
+
+            
+
+          }
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+
+
+        function game() {
+
+        }*/
+
+
+  
+
+        //player selection input
+        //computer selection randomization
+        //break down when paper beats rock, etc (if and)
+            //if computerPlay(Paper) {}
+        //return output with string "You Lose! Paper beats Rock"
+            
+              
+          
+        //make function case insensitive
+            //let input = document.getElementById('userInput').value.toLowerCase();
+
+
+
+
+        
 
 
 
