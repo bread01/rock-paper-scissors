@@ -8,31 +8,18 @@
 
 <body>
   <script>
-    // function computerPlay
-    function computerPlay
-    // variable Rock
-      let Rock = "Rock"
-    // variable Paper
-      let Paper = "Paper"
-    // variable Scissors
-      let Scissors = "Scissors"
-    // define parameter 1 (player 1)
-      playerSelection
-    // define parameter 2 (computer opponent)
-      computerSelection
-    // random return string of 3 variables
-      random()
-    // make function case insensitive (rock, ROCK, RocK etc)
-      var input = document.getElementById('userInput').value.toLowerCase();
-    // string should declare "You Lose! Paper beats Rock"
-      return "You Lose! Paper beats Rock"
+        // variables - wasn't working correctly until I changed to brackets
+        let choicesRPS = ['Rock', 'Paper', 'Scissors'];
+        
+        // randomize the variables
+        function computerPlay(choicesRPS) {
+          return choicesRPS[Math.floor(Math.random() * choicesRPS.length)];
+        }
+        // output the random variable choice
+        console.log(computerPlay(choicesRPS));
+      
 
 
-
-
-
-    
-    console.log("Hello, World!")
 
 
 
