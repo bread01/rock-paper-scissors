@@ -15,24 +15,57 @@
           let mix = Math.floor(Math.random() * 3);
           return cChoice[mix];
         }
-        // get rid of this line after debugging
-        //console.log(computerPlay())
-
+        
         // all outcomes from computer above and player 1
         let computerSelection = computerPlay();
         let playerSelection = "Rock";
+        // added variables for counting purposes
+        let computerScore = 0;
+        let playerScore = 0;
 
         function playRound() {
           if (computerSelection == "Paper") {
-            return "You Lose! Paper beats Rock!";
+            computerScore ++;
+            console.log("You Lose! Paper beats Rock!");
+            console.log("Your Score: ", playerScore);
+            console.log("Computer Score :", computerScore);
           } else if (computerSelection == "Scissors") {
             return "You Win! Rock beats Scissors!";
           } else if (computerSelection == "Rock") {
-            return "You Tie! Auto self-destruct in 5..4..";
-
+            return "You Tie! No soup for you";
           }
         }
-        console.log(playRound())
+        
+        //5 outcomes of the above, tallied       
+        function game() {
+          // return abq.repeat(5); //repeating outcome 5 times, not executing function
+          // changed console.log to console.count
+           
+         
+            console.count(playRound());
+            console.count(playRound());
+            console.count(playRound());
+            console.count(playRound());
+            console.count(playRound()); 
+
+          // take results, after 5 rounds, and report winner/loser
+            
+            
+            if (computerScore > playerScore) {
+              console.log('The Computer Won')
+            } else {
+              console.log('The Player Won')
+            }
+          }
+
+          console.log(game());
+
+
+
+          // use prompt() to take user input; fix playerSelection
+
+
+        
 
 
 
@@ -40,14 +73,6 @@
                   return "You win! Rock beats scissors!";
             }   else if ((playerSelection == 'rock') && (computerSelection == 'paper')) {
                   return "You lose! paper beats rock!";
-            }   else if ((playerSelection == 'paper') && (computerSelection == 'scissors')) {
-                  return "You lose! scissors beats paper!";
-            }   else if ((playerSelection == 'paper') && (computerSelection == 'rock')) {
-                  return "You win! paper beats rock!";
-            }   else if ((playerSelection == 'scissors') && (computerSelection == 'paper')) {
-                  return "You win! scissors beats paper";
-            }   else if ((playerSelection == 'scissors') && (computerSelection == 'rock')) {
-                  return "You lose! rock beats scissors";
             }   else {
                   return "You tie! initiate self-destruct...";
             }
@@ -55,8 +80,7 @@
          */
 
 
-        // 5 round game that keeps score and reports winner or loser
-        // use the previous function inside of this one
+
        /* function game() {
             while (count < 5) {
               const computerSelection = computerPlay(); 
@@ -76,27 +100,10 @@
           // use prompt() to get input from the user
 
           
-                      
-            
-
-
-      
-            
-
-            
-
-
-
-            
               
           
         //make function case insensitive
             //let input = document.getElementById('userInput').value.toLowerCase();
-
-
-
-
-        
 
 
 
