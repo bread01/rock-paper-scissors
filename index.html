@@ -18,21 +18,34 @@
         
         // all outcomes from computer above and player 1
         let computerSelection = computerPlay();
-        let playerSelection = "Rock";
+        //let playerSelection = "Rock";
+        let playerSelection = prompt("Rock, Paper, or Scissors?");
         // added variables for counting purposes
         let computerScore = 0;
         let playerScore = 0;
 
         function playRound() {
-          if (computerSelection == "Paper") {
-            computerScore ++;
-            console.log("You Lose! Paper beats Rock!");
+          if (computerSelection == "Paper" && playerSelection == "Scissors") {
+            playerScore ++;
+            console.log("You Win! Scissors cut Paper *snip*");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == "Scissors") {
-            return "You Win! Rock beats Scissors!";
-          } else if (computerSelection == "Rock") {
-            return "You Tie! No soup for you";
+          } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
+            computerScore ++;
+            console.log("You Lose! Scissors cut Paper *snip*");
+            console.log("Your Score: ", playerScore);
+            console.log("Computer Score :", computerScore);
+          } else if (computerSelection == "Rock" && playerSelection == "Paper") {
+            playerScore ++;
+            console.log("You Win! Paper covers rock...somehow");
+            console.log("Your Score: ", playerScore);
+            console.log("Computer Score :", computerScore);
+          } else if (computerSelection == playerSelection) {
+            playerScore ++;
+            computerScore ++;
+            console.log("You Tie! No soup for you");
+            console.log("Your Score: ", playerScore);
+            console.log("Computer Score :", computerScore);
           }
         }
         
