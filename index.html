@@ -9,52 +9,53 @@
 <body>
   <script>
 
-        // computer randomize rock paper scissors
-        function computerPlay() {
-          let cChoice = ["Rock", "Paper", "Scissors"];
-          let mix = Math.floor(Math.random() * 3);
-          return cChoice[mix];
-        }
-        
-        // all outcomes from computer above and player 1
+        // Variables utilized throughout
         let computerSelection = computerPlay();
         let playerSelection = prompt("Rock, Paper, or Scissors?");
         // added variables for counting purposes
         let computerScore = 0;
-        let playerScore = 0;
-
+        let playerScore = 0;   
+        
+        // computer randomize rock paper scissors
+        // simplified return over old code
+        function computerPlay() {
+          let cChoice = ["rock", "paper", "scissors"];
+          return cChoice[Math.floor(Math.random() * 3)];
+        }
+        
+        // all outcomes from first function and player 1
         function playRound() {
-          if (computerSelection == "Paper" && playerSelection == "Scissors") {
+          if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") {
             playerScore ++;
             console.log("You Win! Scissors cut Paper *snip*");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
+          } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") {
             computerScore ++;
             console.log("You Lose! Scissors cut Paper *snip*");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == "Rock" && playerSelection == "Paper") {
+          } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") {
             playerScore ++;
             console.log("You Win! Paper covers rock...somehow");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == "Paper" && playerSelection == "Rock") {
+          } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") {
             computerScore ++;
             console.log("You Lose! Paper covers rock...somehow");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == "Rock" && playerSelection == "Scissors") {
+          } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") {
             computerScore ++;
             console.log("You Lose! Rock destroys scissors *smash*");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == "Scissors" && playerSelection == "Rock") {
+          } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") {
             playerScore ++;
             console.log("You Win! Rock destroys scissors *smash*");
             console.log("Your Score: ", playerScore);
             console.log("Computer Score :", computerScore);
-          } else if (computerSelection == playerSelection) {
+          } else if (computerSelection == playerSelection.toLowerCase()) {
             playerScore ++;
             computerScore ++;
             console.log("You Tie! No soup for you");
@@ -65,14 +66,14 @@
         
         //5 outcomes of the above, tallied       
         function game() {
-          // return abq.repeat(5); //repeating outcome 5 times, not executing function
+          //repeating outcome 5 times, not executing function
           // changed console.log to console.count then back
-            console.log(playRound()); 
-            console.log(playRound()); 
-            console.log(playRound()); 
-            console.log(playRound()); 
-            console.log(playRound()); 
-
+            playRound(); 
+            playRound();
+            playRound();
+            playRound();
+            playRound();
+            
           // take results, after 5 rounds, and report winner/loser
             if (computerScore > playerScore) {
               console.log('The Computer Won')
@@ -80,20 +81,15 @@
               console.log('The Player Won')
             }
           }
-
-          console.log(game());
+        console.log(game());
+        
 
 
 
 
         // backlog
-          //finish all the potential answers
             //making result not repeat the same answer
-            //case sensitive not working for prompt
-              //tried .toLowerCase() but nothing
-
-
-
+            //change playRound output to 'return', not console.log
 
 
 
